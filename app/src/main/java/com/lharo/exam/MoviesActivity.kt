@@ -2,6 +2,7 @@ package com.lharo.exam
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.RecyclerView
 
 class MoviesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,5 +31,9 @@ class MoviesActivity : AppCompatActivity() {
             movie.imdbVotes = imdbVotes[i]
             movies.add(movie)
         }
+
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerViewMovies)
+        val adapter = MovieAdapter(movies)
+        recyclerView.adapter = adapter
     }
 }
